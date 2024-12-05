@@ -2,6 +2,12 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 
+"""
+URL configuration for the band website, mapping URLs to their respective view functions.
+
+Each URL pattern is associated with a specific view, allowing users to navigate
+between pages on the site (home, about, events, login, logout and register).
+"""
 
 urlpatterns = [
     path('', views.home, name='home'),
