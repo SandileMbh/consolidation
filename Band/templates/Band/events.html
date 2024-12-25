@@ -1,0 +1,27 @@
+<!-- templates/Band/events.html -->
+{% extends 'Band/base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Upcoming Events</h2>
+
+    {% if events %}
+        <div class="row">
+            {% for event in events %}
+                <div class="col-md- mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ event.name }}</h3>
+                            <h5 class="card-subtitle mb-2 text-muted">{{ event.date|date:"F j, Y" }}</h5>
+                            <p class="card-text"><strong>Location:</strong> {{ event.location }}</p>
+                            <p class="card-text">{{ event.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">No upcoming events at the moment. Please check back later!</p>
+    {% endif %}
+</div>
+{% endblock %}
